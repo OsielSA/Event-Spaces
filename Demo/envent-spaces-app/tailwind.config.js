@@ -11,7 +11,11 @@ module.exports = {
     "./node_modules/tw-elements-react/dist/js/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing:{
+        '30': '30px'
+      }
+    },
   },
   darkMode: "class",
   plugins: [require("tw-elements-react/dist/plugin.cjs")]

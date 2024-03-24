@@ -1,0 +1,10 @@
+.blocked-date {
+    background-color: #F08585;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.div-calendar {
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    height: 500px; /* Ajusta la altura según sea necesario */
+}

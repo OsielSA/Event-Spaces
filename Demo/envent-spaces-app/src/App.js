@@ -1,36 +1,62 @@
-import React, { useState } from "react";
-import MainHeader from './components/MainHeader';
-import Calendar from 'rsuite/Calendar';
+import React, { useRef } from "react";
+import DescriptionPage from "./pages/DescriptionPage";
+import ReservationPage from "./pages/ReservationPage/ReservationPage";
+import MapPage from "./pages/MapPage/MapPage";
+import PackagesPage from "./pages/PackagesPage";
+import WelcomeBanner from "./pages/WelcomeBanner/WelcomeBanner";
 
 import 'rsuite/Calendar/styles/index.css';
 import './App.css';
 
 function App() {
-  const [value, setValue] = useState(new Date());
-  const disabledDate = (date) => {
-    const currentDate = new Date();
-    // Devuelve true si la fecha es anterior a la fecha actual
-    return date < currentDate;
-  };
-  return (
-    <section>
-      <header>
+  const descriptionRef = useRef(null);
+  const calendarRef = useRef(null);
+  const mapRef = useRef(null);
+  const logo = 'Fotos/logo.png';
 
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      </header>
-        <div >
-          <MainHeader></MainHeader>
-          <Calendar></Calendar>
-          <Calendar
-            value={value}
-            onChange={setValue}
-            disabledDate={disabledDate}
-          />
+  const scrollToRef = (ref) => {
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: "smooth" // Aquí se especifica el comportamiento de desplazamiento suave
+    });
+  };
+
+  return (
+    <div className="bg-gray-50 min-h-screen">
+      <nav className="navbar fixed top-0 bg-gray-800 w-full p-4 z-10 shadow-md">
+        <div className="max-w-screen-lg mx-auto flex items-center justify-between">
+          <img src={logo} alt="Logo" className="logo-image-size" /> {/* Mostrar el logo como una imagen */}
+          <ul className="flex space-x-4">
+            <li>
+              <button className="btn text-white" onClick={() => scrollToRef(descriptionRef)}>Galería</button>
+            </li>
+            <li>
+              <button className="btn text-white" onClick={() => scrollToRef(calendarRef)}>Reservar</button>
+            </li>
+            <li>
+              <button className="btn text-white" onClick={() => scrollToRef(mapRef)}>Ubicación</button>
+            </li>
+          </ul>
         </div>
-      
-    </section>
+      </nav>
+        <div className="mt-8">
+          <WelcomeBanner scrollToCalendar={() => scrollToRef(calendarRef)} />
+        </div>
+      <div className="max-w-screen-lg mx-auto pt-16">
+        <div ref={descriptionRef}>
+          <DescriptionPage scrollToCalendar={() => scrollToRef(calendarRef)} />
+        </div>
+        <div className="px-8 py-6">
+          <PackagesPage />
+        </div>
+        <div ref={calendarRef} className="px-8 py-6">
+          <ReservationPage />
+        </div>
+        <div ref={mapRef} className="px-8 py-6">
+          <MapPage />
+        </div>
+      </div>
+    </div>
   );
 }
 
