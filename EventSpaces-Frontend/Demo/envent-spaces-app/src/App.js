@@ -4,6 +4,7 @@ import ReservationPage from "./pages/ReservationPage/ReservationPage";
 import MapPage from "./pages/MapPage/MapPage";
 import PackagesPage from "./pages/PackagesPage";
 import WelcomeBanner from "./pages/WelcomeBanner/WelcomeBanner";
+import ServicesPage from "./pages/ServicesPage/ServicesPage";
 
 import 'rsuite/Calendar/styles/index.css';
 import './App.css';
@@ -47,7 +48,7 @@ function App() {
           <DescriptionPage scrollToCalendar={() => scrollToRef(calendarRef)} />
         </div>
         <div className="px-8 py-6">
-          <PackagesPage />
+          <ServicesPage />
         </div>
         <div ref={calendarRef} className="px-8 py-6">
           <ReservationPage />

@@ -31,11 +31,13 @@ const GitCarousel = ({ children: slides, autoSlide = false, autoSlideInterval = 
             <div className='absolute bottom-4 right-0 left-0'>
                 <div className='flex items-center justify-center gap-2'>
                     {slides.map((s, i) => (
+                        //eslint-disable-next-line react/no-array-index-key
                         <div key={i} className={`transition-all w-1.5 h-1.5 bg-white rounded-full  ${curr === i ? "p-0.5" : "bg-opacity-50"}`} />
                     ))}
                 </div>
             </div>
-       </div>
+        </div>
+
     )
 }
 

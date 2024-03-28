@@ -35,7 +35,8 @@ const GitCarousel = ({ children: slides, autoSlide = false, autoSlideInterval = 
                     ))}
                 </div>
             </div>
-       </div>
+        </div>
+
     )
 }
 

@@ -1,0 +1,89 @@
+package com.eventspaces.EventSpaces.domain.service;
+
+import com.eventspaces.EventSpaces.domain.repository.ReservationRepository;
+import com.eventspaces.EventSpaces.persistence.entity.Reservation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+
+@Service
+public class ReservationService {
+    @Autowired
+    private ReservationRepository reservationRepository;
+
+    public List<Reservation> getAllByIdHall(int idHall){
+        return reservationRepository.getAllByIdHall(idHall);
+    }
+
+    public Reservation saveReservation(Reservation reservation){
+        //Validate Date
+        if(reservationRepository.isReservationDateExists(reservation.getIdHall(), reservation.getReservationDate()))
+            return null;
+
+        //Validate Reservation Code
+        String codeReservation = generateReservationCode();
+        boolean codeReservationExists = true;
+        while(codeReservationExists){
+            codeReservationExists = reservationRepository.isCodeReservationExists(reservation.getIdHall(), codeReservation);
+            if (codeReservationExists)
+                codeReservation = generateReservationCode();
+        }
+        reservation.setCodeReservation(codeReservation);
+
+        return reservationRepository.saveReservation(reservation);
+    }
+
+    //ToDo
+    public boolean updateStatus(Reservation reservation){
+        reservation.setReservationStatus(ReservationStatus.CONFIRMED.getCode());
+        return true;
+    }
+
+    private static String generateReservationCode() {
+        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        String numbers = "0123456789";
+
+        int codeLength = 5;
+
+        StringBuilder codeBuilder = new StringBuilder();
+
+        Random random = new Random();
+
+        int firstPosition = random.nextInt(codeLength);
+
+
+        for (int i = 0; i < codeLength; i++) {
+            if (i == firstPosition || i == firstPosition + 2) {
+                char number = numbers.charAt(random.nextInt(numbers.length()));
+                codeBuilder.append(number);
+            } else {
+                char letter = letters.charAt(random.nextInt(letters.length()));
+                codeBuilder.append(letter);
+            }
+        }
+
+        return codeBuilder.toString();
+    }
+
+    private enum ReservationStatus {
+        PENDING(1),
+        CONFIRMED(2),
+        CANCELLED(3);
+
+        private final Integer code;
+
+        ReservationStatus(Integer code) {
+            this.code = code;
+        }
+
+        public Integer getCode() {
+            return code;
+        }
+    }
+}
+
