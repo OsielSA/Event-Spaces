@@ -5,8 +5,8 @@ import './FooterPage.css'
 const FooterPage = () => {
     const logo = './Fotos/logo-event-spaces.png';
     return (
-        <div className="flex items-center justify-center h-full bg-yellow-950">
-            <footer className="bg-yellow-950 text-white py-6">
+        <div className="flex items-center justify-center h-full bg-sky-950">
+            <footer className="bg-sky-950 text-white py-6">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                         <div>

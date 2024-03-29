@@ -5,7 +5,8 @@ const initialState = {
     codeReservation: '',
     customerName: '',
     reservationConfirmed: '',
-    reservationDate: ''
+    reservationDate: '',
+    dateFormatted: '',
 };
 
 export const reservationSlice = createSlice({
@@ -13,9 +14,10 @@ export const reservationSlice = createSlice({
     initialState,
     reducers: {
         addNewReservation: (state, action) => {
-            const {idHall,  reservationDate} = action.payload;
+            const {idHall,  reservationDate, dateFormatted} = action.payload;
             state.idHall = idHall;
             state.reservationDate = reservationDate;
+            state.dateFormatted = dateFormatted;
         }
     }
 });

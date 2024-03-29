@@ -16,15 +16,16 @@ insert into Event_Halls values
 select * from Event_Halls;
 
 --drop table Reservations;
-CREATE TABLE Reservations2(
+CREATE TABLE Reservations(
 	id_reservation SERIAL PRIMARY KEY,
 	id_hall INT,
 	code_reservation VARCHAR(100),
 	customer_name VARCHAR(100),
-	reservation_confirmed bool,
+	reservation_status int,
 	reservation_date DATE,
 	registration_date TIMESTAMP
 );
+
 ALTER TABLE Reservations
 ALTER COLUMN reservation_date TYPE DATE;
 

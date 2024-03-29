@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const ReservationCompletedMsj = ({ reservationCode }) => {
+const ReservationCompletedMsj = ({ reservationCode, limitedDate }) => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
             <div className="fixed inset-0 bg-black bg-opacity-50"></div>
@@ -12,12 +12,15 @@ const ReservationCompletedMsj = ({ reservationCode }) => {
                     </svg>
                     <h2 className="mt-4 text-2xl font-extrabold text-gray-900">¡Reservación completada!</h2>
                 </div>
-                <div className="mt-6 text-center">
-                    <p className="text-sm text-gray-700">Su código de reservación</p>
-                    <p className="mt-2 text-lg font-semibold text-blue-600">{reservationCode}</p>
+                <div className="my-6 text-center">
+                    <p className="my-2 text-xl font-bold text-sky-800">{reservationCode}</p>
+                    <p className="my-2 text-sm font-medium text-gray-700">Su código de reservación</p>
+                    <p className="text-sm text-gray-700">Recuerde llevar su anticipo antes del {limitedDate}</p>
+                </div>
+                <div className="text-center">
                     <Link to="/">
-                        <button type="button" className="px-4 py-2 mt-4 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300">Cerrar</button>
-                    </Link>
+                        <button type="button" className="px-5 py-2 mt-4 bg-sky-950 hover:bg-blue-900 focus:ring-2 focus:ring-blue-300 text-white font-medium rounded-lg py-2.5 text-sm">Cerrar</button>
+                    </Link>        
                 </div>
             </div>
         </div>

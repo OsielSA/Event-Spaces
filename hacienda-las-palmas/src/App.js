@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DescriptionPage from "./pages/DescriptionPage";
-import ReservationPage from "./pages/ReservationPage/ReservationPage";
+import ReservationPage from "./pages/ReservationPage";
 import ConfirmationPage from "./pages/ConfirmationPage";
 import MapPage from "./pages/MapPage/MapPage";
 import WelcomeBanner from "./pages/WelcomeBanner/WelcomeBanner";
@@ -26,7 +26,8 @@ function App() {
   return (
     <Router>
       <div className="bg-gray-50 min-h-screen">
-      <nav className="navbar fixed top-0 bg-yellow-950 w-full p-4 z-10 shadow-md">
+      {/* <nav className="navbar fixed top-0 bg-yellow-950 w-full p-4 z-10 shadow-md"> */}
+      <nav className="navbar fixed top-0 bg-sky-950 w-full p-4 z-10 shadow-md">
         <div className="max-w-screen-lg mx-auto flex items-center justify-between">
           <img src={logo} alt="Logo" className="logo-image-size" /> {/* Mostrar el logo como una imagen */}
           <ul className="flex space-x-4">

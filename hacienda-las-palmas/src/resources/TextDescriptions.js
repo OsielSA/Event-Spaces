@@ -3,6 +3,7 @@ const TEXT_DESCRIPTIONS = {
     HALL_NAME: 'Hacienda las Palmas',
     WELCOME_TEXT: 'En nuestro hermoso salón de eventos, nos enorgullece convertir tus ocasiones especiales en momentos inolvidables. Con una ubicación encantadora y nuestro espacio versátil y elegante está diseñado para adaptarse a tus necesidades y superar tus expectativas.',
     ADDRESS: 'La Tenería, 80327 Navolato, Sin.',
+    BOOKING_COST: '$12,000',
     EMAIL: 'haciendalaspalmas1@gmail.com',
     PHONE: '652-546-2541',
     FACEBOOK: 'https://www.facebook.com/share/9TPfu8oUiEibK1Uq/',
