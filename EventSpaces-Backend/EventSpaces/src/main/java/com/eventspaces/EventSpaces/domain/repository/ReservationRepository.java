@@ -34,4 +34,8 @@ public class ReservationRepository {
         return reservationsCrudRepository.save(reservation);
     }
 
+
+    public void updateReservationStatus(){
+        reservationsCrudRepository.updateReservationStatus();
+    }
 }

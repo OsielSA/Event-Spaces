@@ -19,6 +19,9 @@ public class Reservation<reservation_confirmed> {
     @Column(name = "id_hall")
     private Integer idHall;
 
+    @Column(name = "id_package")
+    private Integer idPackage;
+
     @Column(name = "code_reservation")
     private String codeReservation;
 
@@ -36,6 +39,9 @@ public class Reservation<reservation_confirmed> {
     @UpdateTimestamp
     private Timestamp registrationDate;
 
+    @Transient
+    private String email;
+
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -50,6 +56,14 @@ public class Reservation<reservation_confirmed> {
 
     public void setIdHall(Integer idHall) {
         this.idHall = idHall;
+    }
+
+    public Integer getIdPackage() {
+        return idPackage;
+    }
+
+    public void setIdPackage(Integer idPackage) {
+        this.idPackage = idPackage;
     }
 
     public String getCodeReservation() {
@@ -90,5 +104,13 @@ public class Reservation<reservation_confirmed> {
 
     public void setRegistrationDate(Timestamp registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

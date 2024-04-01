@@ -3,6 +3,7 @@ package com.eventspaces.EventSpaces.domain.service;
 import com.eventspaces.EventSpaces.domain.repository.ReservationRepository;
 import com.eventspaces.EventSpaces.persistence.entity.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -14,6 +15,9 @@ import java.util.Random;
 public class ReservationService {
     @Autowired
     private ReservationRepository reservationRepository;
+
+    @Autowired
+    private EmailSender emailSender;
 
     public List<Reservation> getAllByIdHall(int idHall){
         return reservationRepository.getAllByIdHall(idHall);
@@ -34,7 +38,17 @@ public class ReservationService {
         }
         reservation.setCodeReservation(codeReservation);
 
+        //emailSender.sendTestEmail(codeReservation);
+
         return reservationRepository.saveReservation(reservation);
+    }
+
+
+    @Scheduled(cron = "0 18 * * * *") // Ejecutar todos los días a las 6:00 PM
+    //@Scheduled(cron = "0 * * * * *") // Ejecutar cada minuto
+    private void ejecutarFuncionCadaMinuto() {
+        System.out.println("Ejecutando función updateReservationStatus...");
+        reservationRepository.updateReservationStatus();
     }
 
     //ToDo

@@ -1,6 +1,7 @@
 package com.eventspaces.EventSpaces.persistence.crud;
 
 import com.eventspaces.EventSpaces.persistence.entity.Reservation;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.time.LocalDate;
@@ -16,4 +17,6 @@ public interface ReservationsCrudRepository extends CrudRepository<Reservation, 
 
     Optional<Reservation> findByIdHallAndReservationDateAndReservationStatusNot(int idHall, LocalDate reservationDate, int reservationStatus);
 
+    @Query(value = "SELECT fn_update_reservation_status()", nativeQuery = true)
+    void updateReservationStatus();
 }

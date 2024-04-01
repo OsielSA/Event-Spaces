@@ -19,6 +19,7 @@ select * from Event_Halls;
 CREATE TABLE Reservations(
 	id_reservation SERIAL PRIMARY KEY,
 	id_hall INT,
+	id_package INT,
 	code_reservation VARCHAR(100),
 	customer_name VARCHAR(100),
 	reservation_status int,
@@ -26,6 +27,20 @@ CREATE TABLE Reservations(
 	registration_date TIMESTAMP
 );
 
+CREATE TABLE Packages_Pricing(
+	id_package SERIAL PRIMARY KEY,
+	id_hall INT,
+	package_name VARCHAR(100),
+	package_description VARCHAR(100), 
+	price NUMERIC(10, 2),
+	max_capacity INT --LIMITE DE PERSONAS
+)
+
+insert into Packages_Pricing values
+(1, 1, 'Paquete 1', '', 12000, 150)
+
+
+select * from Packages_Pricing
 ALTER TABLE Reservations
 ALTER COLUMN reservation_date TYPE DATE;
 
