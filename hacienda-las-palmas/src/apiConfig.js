@@ -1,4 +1,5 @@
-const BASE_URL = 'http://api.eventspaces.mx/api';
+const BASE_URL = 'http://api.eventspaces.mx';
+//const BASE_URL = 'http://localhost:8080/api';
 const ID_HALL = 1;
 
 const API_URLS = {

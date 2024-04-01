@@ -7,9 +7,11 @@ import ReservationCompletedMsj from '../components/ReservationCompletedMsj';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { TEXT_DESCRIPTIONS } from '../resources/TextDescriptions';
+import { useNavigate  } from 'react-router-dom';
 
 const ConfirmationPage = () => {
     const reservation = useSelector((state) => state.reservation);
+    const navigate  = useNavigate ();
     const [customerName, setCustomerName] = useState('');
 
     const [reservationFinished, setReservationFinished] = useState(false);
@@ -18,6 +20,11 @@ const ConfirmationPage = () => {
     const [limitedDate, setLimitedDate] = useState('');
     
     useEffect(() => {
+        if (!reservation.reservationDate) {
+            // Redirigir al usuario a la ruta "/"
+            navigate("/");
+        }
+
         // Función para calcular la fecha actual y sumarle 2 días
         const calculateLimitedDate = () => {
             const currentDate = new Date();
@@ -39,7 +46,8 @@ const ConfirmationPage = () => {
             customerName: customerName,
             reservationStatus: 1,
             reservationConfirmed: '',
-            reservationDate: reservation.reservationDate
+            reservationDate: reservation.reservationDate,
+            email: 'osiel@gmail.com'
         }
         console.log(parameters)
         saveReservation('POST', parameters)
