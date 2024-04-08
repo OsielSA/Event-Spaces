@@ -17,10 +17,15 @@ function App() {
   const logo = 'Fotos/logo.png';
 
   const scrollToRef = (ref) => {
+    try{
     window.scrollTo({
       top: ref.current.offsetTop,
       behavior: "smooth"
     });
+  }
+  catch{
+    return;
+  }
   };
 
   return (

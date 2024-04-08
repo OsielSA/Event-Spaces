@@ -2,6 +2,14 @@ import {TEXT_DESCRIPTIONS} from '../../resources/TextDescriptions';
 import { FaFacebook } from "react-icons/fa";
 import './FooterPage.css'
 
+function formatPhoneNumber(phoneNumber) {
+    const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+        return match[1] + ' ' + match[2] + ' ' + match[3];
+    }
+    return null;
+}
 const FooterPage = () => {
     const logo = './Fotos/logo-event-spaces.png';
     return (
@@ -14,13 +22,19 @@ const FooterPage = () => {
                             <p className="mt-2">
                                 {TEXT_DESCRIPTIONS.ADDRESS}<br />
                                 Email: {TEXT_DESCRIPTIONS.EMAIL}<br />
-                                Phone: {TEXT_DESCRIPTIONS.PHONE}</p>
+                                Phone: {TEXT_DESCRIPTIONS.PHONE_FORMAT}</p>
                         </div>
-                        <div>
+                        <div className='text-center'>
                             <h2 className="text-lg font-semibold">Siguenos en Facebook</h2>
-                            <div className="flex items-center mt-2">
+                            {/* <div className="flex items-center mt-2">
                                 <a href={TEXT_DESCRIPTIONS.FACEBOOK} target="_blank" rel="noopener noreferrer"  className="text-white hover:text-gray-400 flex items-center mr-2">
-                                    <FaFacebook className="mr-1" /> {/* Aquí estoy utilizando un margen a la derecha para separar el ícono del texto */}
+                                    <FaFacebook className="mr-1" />
+                                    <span>Hacienda Las Palmas</span>
+                                </a>
+                            </div> */}
+                            <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '8px' }}>
+                                <a href={TEXT_DESCRIPTIONS.FACEBOOK} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 flex items-center mr-2">
+                                    <FaFacebook className="mr-1" />
                                     <span>Hacienda Las Palmas</span>
                                 </a>
                             </div>

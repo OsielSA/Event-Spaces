@@ -43,7 +43,7 @@ const CompactCalendar = ({ onSelectDate }) => {
     if (isBlocked) {
       className = 'bg-red-400 cursor-not-allowed'; // Aplicar clase CSS para fechas bloqueadas
     } else if (isLimitedDate) {
-      className = 'bg-yellow-200'; // Aplicar clase CSS para fechas limitadas
+      className = 'bg-yellow-200 cursor-not-allowed'; // Aplicar clase CSS para fechas limitadas
     }
     // else if (isPastDate) {
     //   className = 'bg-gray-300 cursor-not-allowed'; // Aplicar clase CSS para fechas pasadas

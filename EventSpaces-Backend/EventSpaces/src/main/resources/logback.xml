@@ -1,0 +1,23 @@
+<configuration>
+    <!-- Configuración del archivo de registro -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+<!--        <file>C:\Users\osiel\Desktop\Event-Spaces\EventSpaces-Backend\Logs\eventspaces.log</file>-->
+        <file>/var/www/backend/logs/eventspaces.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configuración de la consola -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %M:%line %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configuración del nivel de raíz -->
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/> <!-- Agrega la referencia al ConsoleAppender -->
+    </root>
+</configuration>

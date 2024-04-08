@@ -2,18 +2,15 @@ import CarouselBasic from "../components/CarouselBsc";
 import GitCarousel from "../components/GitCarousel";
 
 const DescriptionPage = ({ scrollToCalendar }) => {
-    
+
     const slides = [
-        // {id: 1, path: "./Fotos/1.jpg"},
-        // {id: 2, path: "./Fotos/2.jpg"},
-        // {id: 3, path: "./Fotos/3.jpg"},
-        // {id: 4, path: "./Fotos/4.jpg"},
-        // {id: 5, path: "./Fotos/5.jpg"},
-        "./Fotos/1.jpg",
-        "./Fotos/2.jpg",
-        "./Fotos/3.jpg",
-        "./Fotos/4.jpg",
-        "./Fotos/5.jpg",
+        "./Fotos/1.jpeg",
+        "./Fotos/2.jpeg",
+        "./Fotos/3.jpeg",
+        "./Fotos/4.jpeg",
+        "./Fotos/5.jpeg",
+        "./Fotos/6.jpeg",
+        "./Fotos/7.jpeg",
     ]
 
     return (

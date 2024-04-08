@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import DateInput from '../components/DateInput';
+import { useDispatch } from 'react-redux';
+import { addNewReservation } from '../redux/ReservationSlice';
+import { addReservations } from '../redux/ReservationsSlice';
+import { ID_HALL, API_URLS } from '../apiConfig';
+import { Link } from "react-router-dom";
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import CompactCalendar from '../components/CompactCalendar';
-import { ID_HALL, API_URLS } from '../apiConfig';
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { addReservations } from '../redux/ReservationsSlice';
-import { addNewReservation } from '../redux/ReservationSlice';
 import LoadingCalendar from '../components/LoadingCalendar';
-import { Link } from "react-router-dom";
+import DateInput from '../components/DateInput';
+import axios from 'axios';
 
 const ReservationPage = () => {
 	const url = API_URLS.GET_RESERVATIONS;

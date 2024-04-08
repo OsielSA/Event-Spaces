@@ -6,7 +6,7 @@ function MapPage() {
     <>
       <div style={{ marginTop: "60px", marginBottom: "15px" }}>
         <h2 className='text-3xl font-bold mb-2 text-center text-sky-950'>Encuéntranos Aquí</h2>
-        <p className='text-lg text-gray-600 '>Nos encontramos por el Bulevar Leonismo Internacional S/N Colonia la Teneria, Navolato Sinaloa. ¡Listos para dar la bienvenida a tu evento!</p>
+        <p className='text-lg text-gray-600 '>{TEXT_DESCRIPTIONS.ADDRESS_DESCRIPTION}</p>
       </div>
       <div className="map-page">
         <div className="map-container">

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservación completada</title>
+    <style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			margin: 0;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+				'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+				sans-serif;
+				font-size: 16px;
+		}
+		.header-div {
+			background-color: #082F49 !important;
+			display: flex;
+			align-items: center;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		.logo-image-size {
+			width: 150px;
+			height: auto;
+			display: block;
+			position: relative;
+		}
+		.logo-title {
+			color: white !important;
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.body-div {
+			background-color: #E5E7EB !important;
+			text-align: center;
+			padding-top: 30px;
+			padding-bottom: 40px;
+		}
+
+		.body-div p {
+			width: 70%;
+			margin: 0 auto;
+			text-align: center;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		.reservation-code {
+			color: #075985 !important;
+		}
+		.thanks-div{
+			color: #075985 !important;
+			font-size: 18px;
+			font-weight: bold;
+			padding-top: 15px;
+		}
+		.footer-div {
+			background-color: #082F49 !important;
+			text-align: center;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		.logoES{
+			width: 150px;
+			height: auto;
+		}
+		.label-ES{
+			color: white !important;
+		}
+	</style>
+</head>
+
+<body>
+<div class="header-div">
+    <img class="logo-image-size"
+         src="https://storage.googleapis.com/bk-event-spaces/public/logo-haciendalaspalmas.png" />
+    <label class="logo-title">Hacienda las Palmas</label>
+</div>
+<div class="body-div">
+    <h2>Se ha realizado su reservación</h2>
+    <h1 class="reservation-code">[RESERVATION_CODE]</h1>
+    <p>Este es su codigo de reservación</p>
+    <p>La fecha límite para llevar su anticipo es el [LIMIT_DATE]. De lo contrario, la reserva será cancelada.</p>
+    <p>Póngase en contacto con nosotros mediante una llamada telefónica o a través de WhatsApp al siguiente número para coordinar la entrega de su anticipo.</p>
+    <p>
+        <a href="tel:6721116338" className="flex items-center hover:text-gray-400">
+            (672) 111 6338
+        </a>
+    </p>
+    <div class="thanks-div">¡Gacias por su preferencia!</div>
+</div>
+<div class="footer-div">
+    <img class="logoES" src="https://storage.googleapis.com/bk-event-spaces/public/logo-event-spaces.png" alt="event-spaces">
+    <br />
+    <label class="label-ES">Powered by eventspaces.mx</label>
+</div>
+</body>
+</html>
