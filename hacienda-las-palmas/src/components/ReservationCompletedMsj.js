@@ -6,7 +6,7 @@ import { TEXT_DESCRIPTIONS } from "../resources/TextDescriptions";
 const ReservationCompletedMsj = ({ reservationCode, limitedDate, enteredEmail }) => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0 bg-black bg-opacity-50"></div>
+            <div className="fixed inset-0 bg-black bg-opacity-50" />
             <div className="relative max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
                 <div className="text-center">
                     <svg className="w-16 h-16 mx-auto text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -20,7 +20,7 @@ const ReservationCompletedMsj = ({ reservationCode, limitedDate, enteredEmail })
                         <p className="my-2 text-sm font-medium text-gray-700">Su código de reservación</p>
                     }
                     {enteredEmail &&
-                        <p className="mt-2 mb-4 text-sm font-medium text-gray-700">Se ha el código de reserva a su correo electrónico. Por favor, revise su bandeja de spam si no lo ve en su bandeja de entrada.</p>                    
+                        <p className="mt-2 mb-4 text-sm font-medium text-gray-700">Se ha enviado el código de reserva a su correo electrónico. Por favor, revise su bandeja de spam si no lo ve en su bandeja de entrada.</p>
                     }
                     <p className="text-sm text-gray-700">La fecha límite para llevar su anticipo es el <span className="font-medium">{limitedDate}</span>. De lo contrario, la reserva será cancelada.</p>
                 </div>
@@ -31,7 +31,7 @@ const ReservationCompletedMsj = ({ reservationCode, limitedDate, enteredEmail })
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom:'5px' }}>
                         <a href={TEXT_DESCRIPTIONS.WHATSAPP_LINK} target="_blank" className="flex items-center hover:text-gray-400">
-                            <FaWhatsapp className="mr-2" />Hacienda las palamas
+                            <FaWhatsapp className="mr-2" />{TEXT_DESCRIPTIONS.HALL_NAME}
                         </a>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-around' }}>

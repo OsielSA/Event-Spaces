@@ -9,7 +9,7 @@ function formatPhoneNumber(phoneNumber) {
     return null;
 }
 
-const TEXT_DESCRIPTIONS = {
+let TEXT_DESCRIPTIONS = {
     HALL_NAME: 'Hacienda las Palmas',
     WELCOME_TEXT: 'En nuestro salón de eventos, nos enorgullece convertir tus ocasiones especiales en momentos inolvidables. Con una ubicación encantadora y nuestro espacio versátil y elegante, está diseñado para adaptarse a tus necesidades y superar tus expectativas.',
     ADDRESS: 'La Tenería, 80327 Navolato, Sin.',
@@ -20,7 +20,20 @@ const TEXT_DESCRIPTIONS = {
     PHONE_FORMAT: formatPhoneNumber('6721116338'),
     FACEBOOK: 'https://www.facebook.com/share/9TPfu8oUiEibK1Uq/',
     WHATSAPP_LINK: 'https://wa.me/6721116338',
-    GOOGLE_MAPS_LINK: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.2701645885417!2d-107.7066946!3d24.7646481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86b8e85842b1a6a7%3A0x7f8f7a9bfa18487f!2sInstituto%20Tecnol%C3%B3gico%20de%20Culiac%C3%A1n!5e0!3m2!1ses!2smx!4v1647831366783!5m2!1ses!2smx'
+    GOOGLE_MAPS_LINK: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.2701645885417!2d-107.7066946!3d24.7646481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86b8e85842b1a6a7%3A0x7f8f7a9bfa18487f!2sInstituto%20Tecnol%C3%B3gico%20de%20Culiac%C3%A1n!5e0!3m2!1ses!2smx!4v1647831366783!5m2!1ses!2smx',
+
+    GOOGLE_MAPS_DIRECTIONS: 'https://maps.app.goo.gl/oJtnfF2QVkHAcNHX6?g_st=ic',
 }
 
-export { TEXT_DESCRIPTIONS };
+const updateText = (idHall) => {
+    if(idHall === 1){
+        TEXT_DESCRIPTIONS.HALL_NAME = 'Hacienda las Palmas';
+        TEXT_DESCRIPTIONS.GOOGLE_MAPS_DIRECTIONS = 'https://maps.app.goo.gl/oJtnfF2QVkHAcNHX6?g_st=ic';
+    }
+    else {
+        TEXT_DESCRIPTIONS.HALL_NAME = 'Finca San Marcos';
+        TEXT_DESCRIPTIONS.GOOGLE_MAPS_DIRECTIONS = 'https://maps.app.goo.gl/HYCLGEBJiD4ABE6t5?g_st=ic';
+    }
+}
+
+export { TEXT_DESCRIPTIONS, updateText };

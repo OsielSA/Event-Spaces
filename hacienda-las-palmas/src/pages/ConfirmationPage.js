@@ -39,6 +39,7 @@ const ConfirmationPage = () => {
             navigate("/");
             // console.log("/");
         }
+        window.scrollTo(0, 0);
 
         // Función para calcular la fecha actual y sumarle 2 días
         const calculateLimitedDate = () => {
@@ -162,7 +163,7 @@ const ConfirmationPage = () => {
                     <div className="flex items-center justify-center h-full w-full">
                         <div className="w-4/5 px-3">
                             <label className="text-sm font-normal text-gray-700">Para confirmar su reserva, es necesario pagar el <span className='font-medium'>50%</span> del costo total para el día <span className='font-medium'>{limitedDate}</span>. De lo contrario, su reserva será cancelada. El pago del anticipo debe realizarse en el local.</label>
-                            <label className="text-sm font-normal text-gray-700">
+                            <label className="text-sm font-normal text-gray-700 ml-1">
                                 Para llevar a cabo el anticipo, por favor, comuníquese al número{' '}
                                 <span className='font-medium whitespace-no-wrap' style={{ whiteSpace: 'nowrap' }}>
                                     <a href={`tel:${TEXT_DESCRIPTIONS.PHONE}`}>

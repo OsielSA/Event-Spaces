@@ -30,7 +30,7 @@
 
 
 .logo-image-size {
-  width: 100px;
+  /* width: 100px; */
   height: auto;
   display: block; /* Ajusta el tamaño de la imagen correctamente */
   position: relative; /* Asegura que la imagen esté encima de la sombra */
@@ -45,7 +45,10 @@
   margin-top: 30px;
   min-height: calc(100vh - 40px - 40px);
 }
-
+.div-admin-page{
+  margin-top: 30px;
+  min-height: calc(100vh - 40px - 40px);
+}
 
 .div-footer{
   margin-top: auto;

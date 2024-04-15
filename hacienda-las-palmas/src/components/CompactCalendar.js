@@ -24,6 +24,14 @@ const CompactCalendar = ({ onSelectDate }) => {
   });
 
   function cellClassName(date) {
+    const isSelectedDate = date.getDate() === value.getDate() &&
+                         date.getMonth() === value.getMonth() &&
+                         date.getFullYear() === value.getFullYear();
+
+    const isToday = date.getDate() === today.getDate() &&
+                         date.getMonth() === today.getMonth() &&
+                         date.getFullYear() === today.getFullYear();
+
     const isBlocked = blockedDates.some(blockedDate => {
       return blockedDate.getDate() === date.getDate() &&
              blockedDate.getMonth() === date.getMonth() &&
@@ -40,7 +48,9 @@ const CompactCalendar = ({ onSelectDate }) => {
 
     let className = '';
 
-    if (isBlocked) {
+    if (isSelectedDate && !isToday) {
+      className = 'bg-green-200'; // Aplicar clase CSS para la fecha seleccionada
+    } else if (isBlocked) {
       className = 'bg-red-400 cursor-not-allowed'; // Aplicar clase CSS para fechas bloqueadas
     } else if (isLimitedDate) {
       className = 'bg-yellow-200 cursor-not-allowed'; // Aplicar clase CSS para fechas limitadas
@@ -53,11 +63,15 @@ const CompactCalendar = ({ onSelectDate }) => {
   }
 
   const disabledDate = date => {
-    return date < today || blockedDates.some(blockedDate => {
-      return blockedDate.getDate() === date.getDate() &&
+    return date < today ||
+           blockedDates.some(blockedDate =>
+             blockedDate.getDate() === date.getDate() &&
              blockedDate.getMonth() === date.getMonth() &&
-             blockedDate.getFullYear() === date.getFullYear();
-    });
+             blockedDate.getFullYear() === date.getFullYear()) ||
+           limitedDates.some(limitedDate =>
+             limitedDate.getDate() === date.getDate() &&
+             limitedDate.getMonth() === date.getMonth() &&
+             limitedDate.getFullYear() === date.getFullYear());
   };
 
   return (

@@ -1,6 +1,8 @@
 import React from "react";
 import { TEXT_DESCRIPTIONS } from "../../resources/TextDescriptions";
+import { TbMapShare } from "react-icons/tb";
 import './MapPage.css'
+
 function MapPage() {
   return (
     <>
@@ -17,6 +19,16 @@ function MapPage() {
             height="400"
             loading="lazy"
           ></iframe>
+        </div>
+      </div>
+      <div className="flex flex-col w-full text-right mb-4">
+        <div className='my-3'>
+          <a href={TEXT_DESCRIPTIONS.GOOGLE_MAPS_DIRECTIONS} target="_blank" rel="noopener noreferrer">
+            <button type="button"
+              className="xl:w-auto mt-2 xl:mt-0 px-6 py-2.5 bg-sky-950 hover:bg-blue-900 focus:ring-2 focus:ring-blue-300 text-white font-medium rounded-lg text-sm">
+              <label className='flex'><span className='text-xl mr-1'><TbMapShare /></span> Ir a Google Maps</label>
+            </button>
+          </a>
         </div>
       </div>
     </>
