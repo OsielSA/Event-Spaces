@@ -16,11 +16,17 @@ const DescriptionPage = ({ scrollToCalendar }) => {
         "./Fotos/hacienda/7.jpeg",
     ]
     const slidesFinca = [
-        "./Fotos/finca/1.jpeg",
-        "./Fotos/finca/2.jpeg",
-        "./Fotos/finca/3.jpeg",
-        "./Fotos/finca/4.jpeg",
-        "./Fotos/finca/5.jpeg"
+        "./Fotos/finca/1.jpg",
+        "./Fotos/finca/2.jpg",
+        "./Fotos/finca/3.jpg",
+        "./Fotos/finca/4.jpg",
+        "./Fotos/finca/5.jpg",
+        "./Fotos/finca/6.jpg",
+        "./Fotos/finca/7.jpg",
+        "./Fotos/finca/8.jpg",
+        "./Fotos/finca/9.jpg",
+        "./Fotos/finca/10.jpg",
+        "./Fotos/finca/11.jpg",
     ]
 
     const [slides, setSlides] = useState(slidesHacienda);

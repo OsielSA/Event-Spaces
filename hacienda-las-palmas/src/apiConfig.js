@@ -1,6 +1,7 @@
+import { updateText } from "./resources/TextDescriptions";
+
 //const BASE_URL = 'http://api.eventspaces.mx';
 //const BASE_URL = 'http://localhost:8080';
-import { updateText } from "./resources/TextDescriptions";
 const BASE_URL = 'https://springboot.eventspaces.mx:8443';
 let ID_HALL = 1;
 
